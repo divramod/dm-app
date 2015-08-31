@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "dm-app",
-  "version": "0.0.0",
+  "version": "0.1.5",
   "description": "",
   "main": "index.js",
   "scripts": {
