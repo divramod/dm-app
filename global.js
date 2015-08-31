@@ -22,11 +22,27 @@ jobs.index = co.wrap(function*() {
             var task = require("./tasks/test/index.js");
             yield task.start();
         }
+        // =========== [ todo ] ===========
+        else if (["todo"].indexOf(argv2) > -1) {
+            require("dm-npm").todo(__dirname);
+        }
+        // =========== [ idea ] ===========
+        else if (["idea"].indexOf(argv2) > -1) {
+            require("dm-npm").idea(__dirname);
+        }
+        // =========== [ prompt ] ===========
+        else if (["prompt","p"].indexOf(argv2) > -1) {
+            require("dm-npm").prompt(__dirname);
+        }
         // =========== [ view add ] ===========
         else if (["view"].indexOf(argv2) > -1) {
             var job = require("./jobs/viewAdd/index.js");
             yield job.start(module_path);
         }
+
+        // automatically add tasks here
+
+
         // =========== [ help ] ===========
         else {
             var task = require("./tasks/help/index.js");
